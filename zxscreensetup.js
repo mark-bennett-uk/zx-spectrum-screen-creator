@@ -210,7 +210,7 @@ window.onload = function() {
     fileread.readAsText(file_to_read);
   });
 
-  loadCharacterSet(state.characterSet);
+  state.characterSet = loadCharacterSet();
 
   // set up application
   if(localStorage.getItem("ZXSC-flash") != null){
