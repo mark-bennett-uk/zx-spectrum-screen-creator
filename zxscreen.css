@@ -1,0 +1,159 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color:rgb(168,168,168);
+}
+
+h1{
+  margin: 0;
+}
+
+.heading{
+  font-size: 18px;
+}
+
+.value{
+  font-size: 11px;
+}
+
+#controls{
+  border: 1px solid rgb(168,168,168);
+  width: 1250px;
+  height: 820px;
+}
+
+#screen{
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  border: 1px solid rgb(168,168,168);
+  width: 808px;
+  height: 616px;
+}
+
+#fileinput{
+  display: none;
+}
+
+.colour0{
+  fill: rgb(0,0,0);
+  cursor: pointer;
+}
+.colour1{
+  fill: rgb(0,0,206);
+  cursor: pointer;
+}
+.colour2{
+  fill: rgb(206,0,0);
+  cursor: pointer;
+}
+.colour3{
+  fill: rgb(206,0,206);
+  cursor: pointer;
+}
+.colour4{
+  fill: rgb(0,203,0);
+  cursor: pointer;
+}
+.colour5{
+  fill: rgb(0,203,206);
+  cursor: pointer;
+}
+.colour6{
+  fill: rgb(206,203,0);
+  cursor: pointer;
+}
+.colour7{
+  fill: rgb(206,203,206);
+  cursor: pointer;
+}
+
+.colourbright0{
+  fill: rgb(0,0,0);
+}
+.colourbright1{
+  fill: rgb(0,0,255);
+}
+.colourbright2{
+  fill: rgb(255,0,0);
+}
+.colourbright3{
+  fill: rgb(255,0,255);
+}
+.colourbright4{
+  fill: rgb(0,251,0);
+}
+.colourbright5{
+  fill: rgb(0,251,255);
+}
+.colourbright6{
+  fill: rgb(255,251,0);
+}
+.colourbright7{
+  fill: rgb(255,251,255);
+}
+
+.unticked{
+  fill: white;
+  stroke:rgb(0,0,0);
+  cursor: pointer;
+}
+
+.background{
+  fill: rgb(168,168,168);
+  stroke: rgb(0,0,0);
+  cursor: pointer;
+}
+
+.contrast{
+  fill: white;
+  stroke: black;
+  cursor: pointer;
+}
+
+.arrow{
+  fill: darkorange;
+  stroke: rgb(0,0,0);
+}
+
+.borderarea{
+  stroke: none;
+  cursor: pointer;
+}
+
+#help{
+  color: blue;
+  cursor: pointer;
+}
+#help:hover{
+  text-decoration: underline;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+#noneselectedon{
+  fill: darkorange;
+  stroke: rgb(0,0,0);
+  cursor: pointer;
+}
+
+#noneselectedoff{
+  fill: rgb(168,168,168);
+  stroke: rgb(0,0,0);
+  cursor: pointer;
+}
+
+#charactermarker{
+  fill: none;
+  stroke: darkorange;
+  stroke-width: 4;
+}
+
+@media screen and (min-width: 1650px) {
+  #output{
+    position:absolute;
+    top:25px;
+    left:1280px;
+  }
+}

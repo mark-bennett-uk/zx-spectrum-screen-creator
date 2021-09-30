@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ZX Screen Creator Help</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body>
+    <style>
+      body{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: rgb(168,168,168);
+      }
+      h1{
+        font-size: 24px;
+      }
+      h2{
+        font-size: 18px;
+      }
+      h3{
+        font-size: 14px;
+      }
+      p{
+        font-size: 11px;
+      }
+      li{
+        font-size: 11px;
+      }
+    </style>
+    <h1>ZX Screen Creator Help</h1>
+    <h2>Main controls</h2>
+
+    <h3>Screen</h3>
+    <p>The screen area represents the Spectrum display and is surrounded by a narrow border that represents the Spectrum border. Above the screen, the character position of the mouse is displayed as X and Y coordinates along with that position's character, ink, paper, bright and flash attributes.</p>
+    <p>There are two control boxes, one for <b>Character Grid</b> and another for <b>Border Marker</b>, these switch the display of the optional guidelines on and off. If the control box is orange then the option is on, if it is white then the option is off.</p>
+    <p>Clicking on the screen will place the currently selected character into that position with the current bright, flash, paper and ink colours. If the paper and/or ink are set to none then the colours will not be set, just the pixel pattern from the character.</p>
+    <p>If the current character is <b>None Selected</b> then only the paper, ink, bright and flash attributes will be written.</p>
+
+    <h3>Ink</h3>
+    <p>This column controls the current ink colour, selecting the coloured square selects that colour and the orange arrow indicates the current selection. The colours 0 (black) to 7 (white) can be selected as well as a special <b>None</b> mode. When adding characters to the screen with none selected, the ink colour will not be written.</p>
+
+    <h3>Paper</h3>
+    <p>This column controls the current paper colour, selecting the coloured square selects that colour and the orange arrow indicates the current selection. The colours 0 (black) to 7 (white) can be selected as well a special mode, <b>None</b>. When adding characters to the screen with none selected, the paper colour, bright or flash will not be written.</p>
+
+    <h3>Border</h3>
+    <p>This column controls the current border colour, selecting the coloured square selects that colour and the orange arrow indicates the current selection. The colours 0 (black) to 7 (white) can be selected.</p>
+
+    <h3>Attributes</h3>
+    <p>There are two options in attributes, <b>Bright</b> and <b>Flash</b>. Characters will be set with these attributes when they are placed on the screen. If the paper is set to none then the flash and bright attributes will not be written. The show Flash option starts the flashing and it continues until either the button is clicked again or the mouse pointer leaves the Show Flash button.</p>
+
+    <h3>Erase</h3>
+    <p>When the erase <b>Character</b> option is set clicking on the screen will set all the pixels in that character position to paper. It will also set the paper and ink colours if they are not set to none.</p>
+
+    <h3>Character Editor</h3>
+    <p>Clicking on the <b>Fetch</b> button will load the currently selected character into the character editor, this can then be changed by clicking on the pixels. A click will toggle the pixel between ink and paper. Clicking on the <b>Store</b> button will put the character back in highlighted position in the character array and update the screen display where those characters are used. Characters can be fetched from any character position, they can be stored in all character positions except the block graphics, the last 16 characters.</p>
+
+    <h3>Import CharSet</h3>
+    <P>Import character set opens a file open dialog box, this allows a previously saved character set to be loaded. This will also update the characters on screen if they are that character.</P>
+
+    <h3>Import Screen</h3>
+    <P>Import screen opens a file open dialog box, this allows a previously saved screen to be loaded.</P>
+
+    <h3>Export CharSet</h3>
+    <P>Export character set saves the character set as a JSON file. The save behaviour will depend on your browser and browser settings. This allows a character set to be saved to the local computer.</P>
+
+    <h3>Export Screen</h3>
+    <P>Export screen saves the screen as a JSON file. The save behaviour will depend on your browser and browser settings. This allows a screen to be saved to the local computer.</P>
+
+    <h3>Output CharSet</h3>
+    <P>Output character set writes basic code to the output text area that will create the character set (including the UDGs) in a Spectrum environment. This code can be copied and pasted into a Spectrum emulator, BasIN for example, to enable the character set to be put into a Spectrum data format and subsequently used in your own programs.</P>
+
+    <h3>Output UDGs</h3>
+    <P>Output UDGs writes basic code to the output text area that will create the UDGs in a Spectrum environment. This code can be copied and pasted into a Spectrum emulator, BasIN for example, to enable the UDGs to be put into a Spectrum data format and subsequently used in your own programs.</P>
+
+    <h3>Output Screen</h3>
+    <P>Output screen writes basic code to the output text area that will create the screen in a spectrum environment. This code can be copied and pasted into a Spectrum emulator, BasIN for example, to enable the screen to be put into a Spectrum data format and subsequently used in your own programs.</P>
+
+    <h3>Clear Screen</h3>
+    <p>This button clears the screen to the current ink and paper colours with the current bright and flash attributes.</p>
+
+    <h3>Clear Char+UDG</h3>
+    <p>This button resets the character set and UDGs to the default character set.</p>
+
+    <h3>Autosave</h3>
+    <p>The screen, characters and some other settings are automatically saved as you work, when you open the application this saved state is automatically loaded. This is to offer some protection against accidental browser tab closing and should not be relied upon to save data, use the export functions regularly as you work.</p>
+  </body> 
+</html>

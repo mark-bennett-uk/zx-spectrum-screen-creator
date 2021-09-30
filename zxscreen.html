@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ZX Screen Creator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="zxscreen.css">
+    <script type="text/javascript" src="zxscreen.js" defer></script>
+    <script type="text/javascript" src="zxscreencharset.js" defer></script>
+    <script type="text/javascript" src="zxscreensetup.js" defer></script>
+  </head>
+  <body>
+    <h1>ZX Screen Creator</h1>
+
+    <div id="input">
+      <svg id="controls" viewBox="0 0 1250 820" xmlns="http://www.w3.org/2000/svg">
+        <!-- main screen -->
+        <text class="heading" x="10" y="20">Screen</text>
+        <text class="value" x="95" y="20">X Y</text>
+        <text id="characterposition" class="value" x="130" y="20">[-,-]</text>
+        <text class="value" x="180" y="20">C I P B F</text>
+        <text id="characterattributes" class="value" x="235" y="20">[--- - - - -]</text>
+
+        <rect id="charactergrid" class="unticked" x="330" y="5" width="20" height="20" />
+        <text class="value" x="356" y="19">Character Grid</text>
+
+        <rect id="bordermarkercontrol" class="unticked" x="460" y="5" width="20" height="20" />
+        <text class="value" x="486" y="19">Border Marker</text>
+
+        <text id="help" class="value" x="740" y="19">Help</text>
+
+        <!-- ink -->
+        <text class="heading" x="848" y="20">Ink</text>
+        <rect id="ink0" class="colour0" x="858" y="35" width="20" height="20" />
+        <rect id="ink1" class="colour1" x="858" y="65" width="20" height="20" />
+        <rect id="ink2" class="colour2" x="858" y="95" width="20" height="20" />
+        <rect id="ink3" class="colour3" x="858" y="125" width="20" height="20" />
+        <rect id="ink4" class="colour4" x="858" y="155" width="20" height="20" />
+        <rect id="ink5" class="colour5" x="858" y="185" width="20" height="20" />
+        <rect id="ink6" class="colour6" x="858" y="215" width="20" height="20" />
+        <rect id="ink7" class="colour7" x="858" y="245" width="20" height="20" />
+        <rect id="ink8" class="background" x="858" y="275" width="20" height="20" />
+        <polygon id="inkarrow" class="arrow" points="880,45 900,55 900,35" /> 
+        <text class="value" x="840" y="50">0</text>
+        <text class="value" x="840" y="80">1</text>
+        <text class="value" x="840" y="110">2</text>
+        <text class="value" x="840" y="140">3</text>
+        <text class="value" x="840" y="170">4</text>
+        <text class="value" x="840" y="200">5</text>
+        <text class="value" x="840" y="230">6</text>
+        <text class="value" x="840" y="260">7</text>
+        <text class="value" x="825" y="290">None</text>
+
+        <!-- paper -->
+        <text class="heading" x="938" y="20">Paper</text>
+        <rect id="paper0" class="colour0" x="948" y="35" width="20" height="20" />
+        <rect id="paper1" class="colour1" x="948" y="65" width="20" height="20" />
+        <rect id="paper2" class="colour2" x="948" y="95" width="20" height="20" />
+        <rect id="paper3" class="colour3" x="948" y="125" width="20" height="20" />
+        <rect id="paper4" class="colour4" x="948" y="155" width="20" height="20" />
+        <rect id="paper5" class="colour5" x="948" y="185" width="20" height="20" />
+        <rect id="paper6" class="colour6" x="948" y="215" width="20" height="20" />
+        <rect id="paper7" class="colour7" x="948" y="245" width="20" height="20" />
+        <rect id="paper8" class="background" x="948" y="275" width="20" height="20" />
+        <polygon id="paperarrow" class="arrow" points="970,45 990,55 990,35" /> 
+        
+        <!-- border -->
+        <text class="heading" x="1028" y="20">Border</text>
+        <rect id="border0" class="colour0" x="1038" y="35" width="20" height="20" />
+        <rect id="border1" class="colour1" x="1038" y="65" width="20" height="20" />
+        <rect id="border2" class="colour2" x="1038" y="95" width="20" height="20" />
+        <rect id="border3" class="colour3" x="1038" y="125" width="20" height="20" />
+        <rect id="border4" class="colour4" x="1038" y="155" width="20" height="20" />
+        <rect id="border5" class="colour5" x="1038" y="185" width="20" height="20" />
+        <rect id="border6" class="colour6" x="1038" y="215" width="20" height="20" />
+        <rect id="border7" class="colour7" x="1038" y="245" width="20" height="20" />
+        <polygon id="borderarrow" class="arrow" points="1060,45 1080,55 1080,35" /> 
+
+        <!-- attributes -->
+        <text class="heading" x="1118" y="20">Attributes</text>
+        <rect id="bright" class="unticked" x="1128" y="35" width="20" height="20" />
+        <text class="value" x="1154" y="49">Bright</text>
+        <rect id="flash" class="unticked" x="1128" y="65" width="20" height="20" />
+        <text class="value" x="1154" y="79">Flash</text>
+        <rect id="flashing" class="unticked" x="1128" y="95" width="20" height="20" />
+        <text class="value" x="1154" y="109">Show Flash</text>
+
+        <!-- erase -->
+        <text class="heading" x="1118" y="200">Erase</text>
+        <rect id="erase" class="unticked" x="1128" y="220" width="20" height="20" />
+        <text class="value" x="1154" y="234">Character</text>
+
+        <!-- buttons -->
+        <rect id="import1" class="background" x="1074" y="313" width="165" height="35" />
+        <text id="import1text" class="heading pointer" x="1084" y="338">Import CharSet</text>
+        <rect id="import2" class="background" x="1074" y="363" width="165" height="35" />
+        <text id="import2text" class="heading pointer" x="1084" y="388">Import Screen</text>
+
+        <rect id="export1" class="background" x="1074" y="413" width="165" height="35" />
+        <text id="export1text" class="heading pointer" x="1084" y="438">Export CharSet</text>
+        <rect id="export2" class="background" x="1074" y="463" width="165" height="35" />
+        <text id="export2text" class="heading pointer" x="1084" y="488">Export Screen</text>
+
+        <rect id="outputcharset" class="background" x="1074" y="513" width="165" height="35" />
+        <text id="outputcharsettext"class="heading pointer" x="1084" y="538">Output CharSet</text>
+
+        <rect id="outputudg" class="background" x="1074" y="563" width="165" height="35" />
+        <text id="outputudgtext"class="heading pointer" x="1084" y="588">Output UDGs</text>
+
+        <rect id="outputscreen" class="background" x="1074" y="613" width="165" height="35" />
+        <text id="outputscreentext" class="heading pointer" x="1084" y="638">Output Screen</text>
+
+        <rect id="clearscreen" class="background" x="1074" y="713" width="165" height="35" />
+        <text id="clearscreentext" class="heading pointer" x="1084" y="738">Clear Screen</text>
+
+        <rect id="clearchars" class="background" x="1074" y="763" width="165" height="35" />
+        <text id="clearcharstext" class="heading pointer" x="1084" y="788">Reset Chr+UDG</text>
+
+        <!-- editor -->
+        <text class="heading" x="846" y="335">Character Editor</text>
+        <rect id="fetch" class="background" x="864" y="563" width="155" height="35" />
+        <text id="fetchtext" class="heading pointer" x="874" y="588">Fetch</text>
+        <rect id="store" class="background" x="864" y="613" width="155" height="35" />
+        <text id="storetext" class="heading pointer" x="874" y="638">Store</text>
+
+        <!-- UDGs -->
+        <rect id="noneselectedon" x="669" y="660" width="145" height="25" />
+        <rect id="noneselectedoff" x="669" y="660" width="145" height="25" />
+        <text id="noneselectedtext" class="heading pointer" x="675" y="679">None Selected</text>
+        <rect id="charactermarker" class="marker" x="8" y="658" width="28" height="28" /> 
+
+      </svg>
+
+      <svg id="screen" viewBox="0 0 808 616" xmlns="http://www.w3.org/2000/svg">
+        <!-- border -->
+        <rect id="screenbordertop" class="borderarea" x="0" y="0" width="808" height="20" />
+        <rect id="screenborderbottom" class="borderarea" x="0" y="596" width="808" height="20" />
+        <rect id="screenborderleft" class="borderarea" x="0" y="0" width="20" height="616" />
+        <rect id="screenborderright" class="borderarea" x="788" y="0" width="20" height="616" />
+      </svg>
+
+    </div>
+
+    <div id="fileinput">
+      <h2>Input</h2>
+      <input id="getjsonfile1" type="file">
+      <input id="getjsonfile2" type="file">
+    </div>
+
+    <div id="output">
+      <h3>Output</h3>
+      <textarea id="outputtext" rows="50" cols="44"></textarea>
+    </div>
+  </body>
+</html>
