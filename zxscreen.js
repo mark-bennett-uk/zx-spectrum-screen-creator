@@ -669,7 +669,7 @@ var state = {
       }
     }
     if(counter > 0){
-      o.innerHTML += line++ + lineText.substr(1) + '\n';
+      o.innerHTML += line++ + ' ' + lineText.substr(1) + '\n';
     }
   },
 
