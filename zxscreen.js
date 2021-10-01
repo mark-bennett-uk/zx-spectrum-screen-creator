@@ -572,6 +572,48 @@ var state = {
     }
   },
 
+  outputScreenClickAlternate: function(){
+    // this version writes characters and attributes for every screen character position including the bottom two rows
+    let o = document.getElementById("outputtext");
+    o.innerHTML = '3000 BORDER ' + this.border + '\n';
+    o.innerHTML += '3010 FOR r = 0 TO 23\n';
+    o.innerHTML += '3020 FOR c = 0 TO 31\n';
+    o.innerHTML += '3030 READ x\n';
+    o.innerHTML += '3040 PRINT #(1+(r<22));AT (r-(22*(r>21))),c;CHR$ x\n';
+    o.innerHTML += '3050 NEXT c\n';
+    o.innerHTML += '3060 NEXT r\n';
+    let line = 3100;
+    let lineText = '';
+    for(let row = 0; row < 24; row++){
+      lineText = '';
+      for(let column = 0; column < 32; column++){
+        let sc = row * 32 + column;
+        lineText += ',' + this.screenData[sc][0];
+      }
+      o.innerHTML += line++ + ' DATA ' + lineText.substring(1) + '\n';
+    }
+
+    o.innerHTML += '3200 FOR i = 0 TO 767\n';
+    o.innerHTML += '3210 READ x\n';
+    o.innerHTML += '3220 POKE 22528 + i,x\n';
+    o.innerHTML += '3230 NEXT i\n';
+    line = 3250;
+    lineText = '';
+    for(let row = 0; row < 24; row++){
+      lineText = '';
+      for(let column = 0; column < 32; column++){
+        let sc = row * 32 + column;
+        let attribute = 0;
+        if(this.screenData[sc][4] == 1) attribute += 128;
+        if(this.screenData[sc][3] != defaultBright) attribute += 64;
+        attribute += this.screenData[sc][2] * 8;
+        attribute += this.screenData[sc][1];
+        lineText += ',' + attribute;
+      }
+      o.innerHTML += line++ + ' DATA ' + lineText.substring(1) + '\n';
+    }
+  },
+
   outputScreenClick: function(){
     // get most common paper ink combination
     let counters = [];
