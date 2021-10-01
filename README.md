@@ -5,6 +5,8 @@ This project allows a user to create ZX Spectrum screen layouts for games or app
 
 To use the software, download all the files into a folder on your computer and open the zxscreen.html file in your browser.
 
+There are several json files included that are screens and character sets created during testing, use the import options to see what can be created with this project.
+
 Screen
 
 The screen area represents the Spectrum display and is surrounded by a narrow border that represents the Spectrum border. Above the screen, the character position of the mouse is displayed as X and Y coordinates along with that position's character, ink, paper, bright and flash attributes.
